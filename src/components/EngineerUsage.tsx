@@ -7,6 +7,33 @@ import { useState } from 'react'
 export default function EngineerUsage() {
   const [activeWorkflow, setActiveWorkflow] = useState(0)
 
+  const getActiveButtonClass = (color: string) => {
+    switch(color) {
+      case 'blue': return 'bg-blue-500 text-white shadow-lg'
+      case 'green': return 'bg-green-500 text-white shadow-lg'
+      case 'purple': return 'bg-purple-500 text-white shadow-lg'
+      default: return 'bg-blue-500 text-white shadow-lg'
+    }
+  }
+
+  const getStepBgClass = (color: string) => {
+    switch(color) {
+      case 'blue': return 'bg-blue-100'
+      case 'green': return 'bg-green-100'
+      case 'purple': return 'bg-purple-100'
+      default: return 'bg-blue-100'
+    }
+  }
+
+  const getStepTextClass = (color: string) => {
+    switch(color) {
+      case 'blue': return 'text-blue-600'
+      case 'green': return 'text-green-600'
+      case 'purple': return 'text-purple-600'
+      default: return 'text-blue-600'
+    }
+  }
+
   const workflows = [
     {
       title: '個人開発',
@@ -118,7 +145,7 @@ export default function EngineerUsage() {
               onClick={() => setActiveWorkflow(index)}
               className={`px-6 py-3 rounded-lg font-medium transition-all ${
                 activeWorkflow === index
-                  ? `bg-${workflow.color}-500 text-white shadow-lg`
+                  ? getActiveButtonClass(workflow.color)
                   : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md hover:border-gray-400'
               }`}
             >
@@ -152,8 +179,8 @@ export default function EngineerUsage() {
               >
                 <div className="bg-gray-50 rounded-lg p-4 border-2 border-gray-200 hover:border-github-info transition-colors">
                   <div className="flex items-center mb-2">
-                    <div className={`w-8 h-8 rounded-full bg-${workflows[activeWorkflow].color}-100 flex items-center justify-center mr-3`}>
-                      <span className={`text-${workflows[activeWorkflow].color}-600 font-bold`}>
+                    <div className={`w-8 h-8 rounded-full ${getStepBgClass(workflows[activeWorkflow].color)} flex items-center justify-center mr-3`}>
+                      <span className={`${getStepTextClass(workflows[activeWorkflow].color)} font-bold`}>
                         {index + 1}
                       </span>
                     </div>

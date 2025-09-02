@@ -7,6 +7,18 @@ import { useState } from 'react'
 export default function WhatIsGitHub() {
   const [selectedFeature, setSelectedFeature] = useState(0)
 
+  const getRingClass = (color: string) => {
+    switch(color) {
+      case 'text-blue-500': return 'ring-blue-500'
+      case 'text-purple-500': return 'ring-purple-500'
+      case 'text-green-500': return 'ring-green-500'
+      case 'text-orange-500': return 'ring-orange-500'
+      case 'text-red-500': return 'ring-red-500'
+      case 'text-indigo-500': return 'ring-indigo-500'
+      default: return 'ring-blue-500'
+    }
+  }
+
   const features = [
     {
       icon: <FileCode size={40} />,
@@ -179,7 +191,7 @@ export default function WhatIsGitHub() {
               onClick={() => setSelectedFeature(index)}
               className={`p-4 rounded-xl transition-all card-hover ${
                 selectedFeature === index
-                  ? `${feature.bgColor} ring-2 ring-offset-2 ring-${feature.color}`
+                  ? `${feature.bgColor} ring-2 ring-offset-2 ${getRingClass(feature.color)}`
                   : 'bg-white hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
               }`}
             >
