@@ -266,7 +266,7 @@ export default function InteractiveDemo() {
               className={`px-6 py-3 rounded-lg font-medium transition-all ${
                 activeDemo === demo.id
                   ? 'bg-github-info text-white shadow-lg'
-                  : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md'
+                  : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md hover:border-gray-400'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -319,8 +319,8 @@ export default function InteractiveDemo() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h4 className="text-xl font-bold mb-2">{steps[currentStep].title}</h4>
-                  <p className="text-gray-600 mb-4">{steps[currentStep].description}</p>
+                  <h4 className="text-xl font-bold mb-2 text-gray-900">{steps[currentStep].title}</h4>
+                  <p className="text-gray-700 mb-4">{steps[currentStep].description}</p>
                   <button 
                     onClick={() => setter(Math.min(steps.length - 1, currentStep + 1))}
                     className="px-4 py-2 bg-github-success text-white rounded-lg hover:bg-green-600 transition-colors flex items-center"

@@ -234,7 +234,7 @@ export default function NonEngineerUsage() {
               className={`px-4 py-2 rounded-lg font-medium transition-all ${
                 selectedRole === index
                   ? `${role.bgColor} ${role.color} ring-2 ring-offset-2`
-                  : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md'
+                  : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md hover:border-gray-400'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -265,9 +265,9 @@ export default function NonEngineerUsage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-lg p-6 shadow-md"
               >
-                <h5 className="font-bold mb-2">{useCase.title}</h5>
-                <p className="text-gray-600 text-sm mb-3">{useCase.description}</p>
-                <div className="text-xs text-gray-500 italic">
+                <h5 className="font-bold mb-2 text-gray-900">{useCase.title}</h5>
+                <p className="text-gray-700 text-sm mb-3">{useCase.description}</p>
+                <div className="text-xs text-gray-600 italic">
                   例: {useCase.example}
                 </div>
               </motion.div>
@@ -296,8 +296,8 @@ export default function NonEngineerUsage() {
               className="bg-white rounded-xl shadow-lg p-6 text-center card-hover"
             >
               <div className="text-4xl mb-4">{tool.icon}</div>
-              <h4 className="font-bold mb-2">{tool.name}</h4>
-              <p className="text-sm text-gray-600 mb-2">{tool.description}</p>
+              <h4 className="font-bold mb-2 text-gray-900">{tool.name}</h4>
+              <p className="text-sm text-gray-700 mb-2">{tool.description}</p>
               <span className="inline-block px-3 py-1 bg-gray-100 rounded-full text-xs font-medium">
                 {tool.level}
               </span>

@@ -119,7 +119,7 @@ export default function EngineerUsage() {
               className={`px-6 py-3 rounded-lg font-medium transition-all ${
                 activeWorkflow === index
                   ? `bg-${workflow.color}-500 text-white shadow-lg`
-                  : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md'
+                  : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md hover:border-gray-400'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -157,9 +157,9 @@ export default function EngineerUsage() {
                         {index + 1}
                       </span>
                     </div>
-                    <h5 className="font-semibold">{step.action}</h5>
+                    <h5 className="font-semibold text-gray-900">{step.action}</h5>
                   </div>
-                  <p className="text-sm text-gray-600">{step.description}</p>
+                  <p className="text-sm text-gray-700">{step.description}</p>
                 </div>
                 {index < workflows[activeWorkflow].steps.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-2 transform -translate-y-1/2 text-gray-400">
@@ -194,8 +194,8 @@ export default function EngineerUsage() {
               <div className="flex items-start">
                 <div className="mr-4">{practice.icon}</div>
                 <div>
-                  <h4 className="font-bold mb-2">{practice.title}</h4>
-                  <p className="text-sm text-gray-600">{practice.description}</p>
+                  <h4 className="font-bold mb-2 text-gray-900">{practice.title}</h4>
+                  <p className="text-sm text-gray-700">{practice.description}</p>
                 </div>
               </div>
             </motion.div>

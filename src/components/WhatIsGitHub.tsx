@@ -180,12 +180,12 @@ export default function WhatIsGitHub() {
               className={`p-4 rounded-xl transition-all card-hover ${
                 selectedFeature === index
                   ? `${feature.bgColor} ring-2 ring-offset-2 ring-${feature.color}`
-                  : 'bg-white hover:bg-gray-50 border border-gray-200'
+                  : 'bg-white hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
               }`}
             >
               <div className={`flex flex-col items-center ${feature.color}`}>
                 {feature.icon}
-                <span className="mt-2 text-sm font-medium text-gray-700">
+                <span className="mt-2 text-sm font-medium text-gray-800">
                   {feature.title}
                 </span>
               </div>

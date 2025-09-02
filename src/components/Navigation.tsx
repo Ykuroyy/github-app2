@@ -99,7 +99,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 className={`block w-full text-left px-4 py-2 rounded-lg font-medium transition-colors ${
                   activeSection === item.id
                     ? 'bg-github-info text-white'
-                    : 'text-gray-600 hover:bg-gray-100'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                 }`}
               >
                 {item.label}
