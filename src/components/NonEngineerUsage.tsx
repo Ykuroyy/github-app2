@@ -11,6 +11,19 @@ import { useState } from 'react'
 export default function NonEngineerUsage() {
   const [selectedRole, setSelectedRole] = useState(0)
 
+  const getActiveRoleClass = (role: any) => {
+    const colorMap: any = {
+      'text-purple-600': { bg: 'bg-purple-50', text: 'text-purple-700', ring: 'ring-purple-500' },
+      'text-pink-600': { bg: 'bg-pink-50', text: 'text-pink-700', ring: 'ring-pink-500' },
+      'text-green-600': { bg: 'bg-green-50', text: 'text-green-700', ring: 'ring-green-500' },
+      'text-blue-600': { bg: 'bg-blue-50', text: 'text-blue-700', ring: 'ring-blue-500' },
+      'text-indigo-600': { bg: 'bg-indigo-50', text: 'text-indigo-700', ring: 'ring-indigo-500' },
+      'text-orange-600': { bg: 'bg-orange-50', text: 'text-orange-700', ring: 'ring-orange-500' },
+    }
+    const mapped = colorMap[role.color] || colorMap['text-blue-600']
+    return `${mapped.bg} ${mapped.text} ring-2 ring-offset-2 ${mapped.ring}`
+  }
+
   const roles = [
     {
       title: 'ライター・編集者',
@@ -231,9 +244,9 @@ export default function NonEngineerUsage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setSelectedRole(index)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`px-4 py-3 sm:px-4 sm:py-2 rounded-lg font-medium transition-all text-sm sm:text-base ${
                 selectedRole === index
-                  ? `${role.bgColor} ${role.color} ring-2 ring-offset-2`
+                  ? getActiveRoleClass(roles[selectedRole])
                   : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md hover:border-gray-400'
               }`}
             >

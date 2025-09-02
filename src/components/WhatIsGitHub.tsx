@@ -189,7 +189,7 @@ export default function WhatIsGitHub() {
             <button
               key={index}
               onClick={() => setSelectedFeature(index)}
-              className={`p-4 rounded-xl transition-all card-hover ${
+              className={`p-3 sm:p-4 rounded-xl transition-all card-hover min-h-[80px] sm:min-h-[100px] ${
                 selectedFeature === index
                   ? `${feature.bgColor} ring-2 ring-offset-2 ${getRingClass(feature.color)}`
                   : 'bg-white hover:bg-gray-50 border border-gray-200 hover:border-gray-300'

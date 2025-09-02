@@ -263,7 +263,7 @@ export default function InteractiveDemo() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveDemo(demo.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all ${
+              className={`px-4 py-3 sm:px-6 sm:py-3 rounded-lg font-medium transition-all text-sm sm:text-base ${
                 activeDemo === demo.id
                   ? 'bg-github-info text-white shadow-lg'
                   : 'bg-white text-gray-700 border border-gray-300 hover:shadow-md hover:border-gray-400'
